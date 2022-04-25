@@ -3,3 +3,6 @@
 <app-sugus colour="yellow" flavour="lemon"></app-sugus>
 <app-sugus colour="orange" flavour="orange"></app-sugus>
 <app-sugus colour="blue" flavour="pineapple"></app-sugus>
+
+<app-form-cv [name]="name" [surname]="surname" [email]="email" (dataChanged)="changeData($event)"></app-form-cv>
+<app-preview-cv [name]="name" [surname]="surname" [email]="email"></app-preview-cv>

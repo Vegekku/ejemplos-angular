@@ -1,0 +1,56 @@
+<h2>Directivas</h2>
+
+<h3>De atributo</h3>
+<p [ngStyle]="{textDecoration: 'underline', backgroundColor: color}">Un párrafo subrayado y con el color del fondo que sale del input de abajo</p>
+<p [ngStyle]="getStyles()">Un párrafo subrayado y con el color del fondo que sale del input de abajo</p>
+<input type="color" [(ngModel)]="color">
+
+
+<p [ngClass]="{orangeLetter: true, lineThrough: false}">Párrafo de color naranja y tachado</p>
+
+<p appMarcar>Pasa el ratón por encima para pintarlo</p>
+<p appMarcar="red">Pasa el ratón por encima para pintarlo</p>
+<p [appMarcar]="color">Pasa el ratón por encima para pintarlo</p>
+
+<h3>Estructurales</h3>
+
+<!-- <button type="button" *ngIf="darkModeActive;" (click)="toggleDarkMode(false)">Activar día</button> -->
+<!-- <button type="button" *ngIf="!darkModeActive" (click)="toggleDarkMode(true)">Activar noche</button> -->
+
+<!-- <button type="button" *ngIf="darkModeActive; else elsePart" (click)="toggleDarkMode(false)">Activar día</button>
+<ng-template #elsePart>
+  <button type="button" (click)="toggleDarkMode(true)">Activar noche</button>
+</ng-template> -->
+
+<!-- <div *ngIf="darkModeActive; then ifPart else elsePart"></div>
+<ng-template #ifPart>
+  <button type="button" (click)="toggleDarkMode(false)">Activar día</button>
+</ng-template>
+<ng-template #elsePart>
+  <button type="button" (click)="toggleDarkMode(true)">Activar noche</button>
+</ng-template> -->
+
+<!-- <div [ngStyle]="{display: 'flex', justifyContent: 'space-evenly'}">
+  <app-sugus *ngFor="let sugus of sugusList" [sugus]="sugus"></app-sugus>
+</div> -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Nº</th>
+      <th>Concepto</th>
+      <th>Cantidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dato of listIngresosGastos; let pos = index; let filaPar = even; let filaImpar = odd; let isFirst = first; let isLast = last; let totalRow = count" [ngClass]="{filaPar: filaPar, primeraFila: isFirst, ultimaFila: isLast}">
+      <td>{{pos + 1}} / {{totalRow}}</td>
+      <td>{{dato.concept}}</td>
+      <td>{{dato.amount}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div [ngSwitch]="color">
+  <p *ngSwitchCase="'#ffffff'">Es blanco</p>
+</div>

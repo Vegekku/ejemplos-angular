@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+export type Sugus = {flavour: string, color: string}
+
 @Component({
   selector: 'app-sugus',
   templateUrl: './sugus.component.html',

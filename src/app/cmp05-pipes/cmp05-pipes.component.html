@@ -1,0 +1,20 @@
+<h2>Pipes</h2>
+
+<div>
+  <h3>{{product.name}}</h3>
+  <p>{{product.description}}</p>
+  <p>Precio: {{product.price}}</p>
+  <p>Fecha de compra: {{product.buyDate}}</p>
+</div>
+
+<div>
+  <!-- <h3>{{product.name|uppercase|lowercase}}</h3> -->
+  <h3>{{product.name|titlecase}}</h3>
+  <p>{{product.description | slice:0:endSubstring}}...</p>
+  <p>Precio: {{product.price|descuento:50|currency:'EUR'}}</p>
+  <p>Fecha de compra: {{product.buyDate|date:'short'}}</p>
+</div>
+
+<pre>{{product|json}}</pre>
+
+<p>Mensaje: {{message|async}}</p>
